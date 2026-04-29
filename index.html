@@ -1,0 +1,29 @@
+<body></body>
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+<script>
+  /* global nn */
+
+
+  function draw () {
+    if (nn.mouseDown) {
+    // let x = nn.random(nn.width)
+    // let y = nn.random(nn.height)
+    let x = nn.mouseX
+    let y = nn.mouseY
+    let hue = nn.random(360)
+    nn.create('div')
+      .content('😭')
+      .hueRotate(hue)
+      .position(x, y)
+      .scale(5)
+      .rotate(hue)
+      .addTo('body')
+    }
+    
+  }
+  
+  // nn.times(100, draw)
+  
+  nn.on('mousemove', draw)
+  
+</script>
